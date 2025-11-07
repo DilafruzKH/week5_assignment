@@ -30,11 +30,10 @@ def group_by_performance(employees, scores, high_performer_threshold):
 
 
 def run_performance_review(initial_employees, initial_scores, employee_to_update, min_performance_score, high_performer_score):
-    # Make copies to work with
     employees = initial_employees.copy()
     scores = initial_scores.copy()
 
-    # Update, remove underperforming, and group
+    
     update_employee_score(employees, scores, employee_to_update[0], employee_to_update[1])
     remove_underperforming(employees, scores, min_performance_score)
     high_performers, core_contributors = group_by_performance(employees, scores, high_performer_score)
@@ -60,4 +59,5 @@ high_perf_score = 90
 
 high_performers, core_contributors = run_performance_review(
     employees, scores, update_info, min_required_score, high_perf_score
+
 )
